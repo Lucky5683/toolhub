@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ToolHub</title>
+</head>
+
+<body style="font-family:Arial;text-align:center">
+
+<h1>Welcome to ToolHub</h1>
+<p>Free Online Tools</p>
+
+<button onclick="randomNumber()">Random Number</button>
+
+<p id="result"></p>
+
+<script>
+function randomNumber(){
+document.getElementById("result").innerHTML =
+Math.floor(Math.random()*100);
+}
+</script>
+
+</body>
+</html>
