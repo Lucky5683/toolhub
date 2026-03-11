@@ -1,23 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ToolHub</title>
+<title>Lucky Tools</title>
+<style>
+body{
+font-family:Arial;
+text-align:center;
+background:#f4f4f4;
+}
+
+h1{
+color:#333;
+}
+
+.tool{
+background:white;
+padding:20px;
+margin:20px;
+border-radius:10px;
+display:inline-block;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+cursor:pointer;
+}
+</style>
 </head>
 
-<body style="font-family:Arial;text-align:center">
+<body>
 
-<h1>Welcome to ToolHub</h1>
-<p>Free Online Tools</p>
+<h1>Lucky Tools</h1>
+<p>Free Simple Online Tools</p>
 
-<button onclick="randomNumber()">Random Number</button>
-
+<div class="tool">
+<h2>Random Number Generator</h2>
+<button onclick="randomNumber()">Generate</button>
 <p id="result"></p>
+</div>
+
+<div class="tool">
+<h2>Password Generator</h2>
+<button onclick="generatePassword()">Generate Password</button>
+<p id="password"></p>
+</div>
 
 <script>
+
 function randomNumber(){
 document.getElementById("result").innerHTML =
 Math.floor(Math.random()*100);
 }
+
+function generatePassword(){
+let chars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+let pass="";
+for(let i=0;i<8;i++){
+pass+=chars.charAt(Math.floor(Math.random()*chars.length));
+}
+document.getElementById("password").innerHTML=pass;
+}
+
 </script>
 
 </body>
